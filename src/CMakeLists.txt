@@ -22,3 +22,4 @@ enable_testing()
 
 # Targets that we develop here
 add_subdirectory(lib)
+add_subdirectory(app)
