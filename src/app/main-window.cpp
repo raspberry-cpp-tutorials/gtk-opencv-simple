@@ -1,16 +1,17 @@
 #include <iostream>
 #include "main-window.hpp"
 
-MainWindow::MainWindow():
+MainWindow::MainWindow(int witdh, int height):
 m_button("Hello World"),
 m_box(Gtk::ORIENTATION_VERTICAL),
 m_label1("First Label"),
 m_label2("Second Label"){
 	// Configure this window:
-	set_size_request(300, 300);
+	this->set_default_size(witdh, height);
 
-	// Configure the button and make it visible:
-	m_button.signal_clicked().connect(sigc::mem_fun(*this, &MainWindow::on_button_clicked));
+	// Connect the 'click' signal and make the button visible:
+	m_button.signal_clicked().connect(
+		sigc::mem_fun(*this, &MainWindow::buttonClick));
     m_button.show();
 	
 	// Make the first label visible:
@@ -25,12 +26,12 @@ m_label2("Second Label"){
 	m_box.pack_start(m_label2, Gtk::PACK_EXPAND_WIDGET);
 
 	// Add the box in this window:
-    add(m_box);
+	add(m_box);
 	
-	// Show the box:
-    m_box.show();
+	// Make the box visible:
+	m_box.show();
 }
 
-void MainWindow::on_button_clicked() {
+void MainWindow::buttonClick() {
     std::cout << "Hello World" << std::endl;
 }

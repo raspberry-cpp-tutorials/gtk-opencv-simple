@@ -5,11 +5,11 @@
 
 class MainWindow : public Gtk::Window {
 public:
-    MainWindow();
+    MainWindow(int width, int height);
     virtual ~MainWindow() = default;
     
-protected:
-    void on_button_clicked();
+private:
+    void buttonClick();
     Gtk::Button m_button;
     Gtk::Box m_box;
 	Gtk::Label m_label1, m_label2;
