@@ -5,7 +5,8 @@ MainWindow::MainWindow(int witdh, int height):
 m_button("Hello World"),
 m_box(Gtk::ORIENTATION_VERTICAL),
 m_label1("First Label"),
-m_label2("Second Label"){
+m_label2("Second Label"),
+probablyInFullScreen(false) {
 	// Configure this window:
 	this->set_default_size(witdh, height);
 
@@ -30,8 +31,43 @@ m_label2("Second Label"){
 	
 	// Make the box visible:
 	m_box.show();
+	
+	// Activate Key-Press events
+	add_events(Gdk::KEY_PRESS_MASK);
 }
 
 void MainWindow::buttonClick() {
     std::cout << "Hello World" << std::endl;
+}
+
+bool MainWindow::on_key_press_event(GdkEventKey* event) {
+	switch (event->keyval) {
+			// Ctrl + C: Ends the app:
+		case GDK_KEY_C:
+		case GDK_KEY_c:
+			if ((event->state & GDK_CONTROL_MASK) == GDK_CONTROL_MASK) {
+				get_application()->quit();
+			}
+			return true;
+			
+			// [F] toggles fullscreen mode:
+		case GDK_KEY_F:
+		case GDK_KEY_f:
+			if (probablyInFullScreen) {
+				unfullscreen();
+				probablyInFullScreen = false;
+			} else {
+				fullscreen();
+				probablyInFullScreen = true;
+			}
+			return true;
+			
+			// [esc] exits fullscreen mode:
+		case GDK_KEY_Escape:
+			unfullscreen();
+			probablyInFullScreen = false;
+			return true;
+	}
+	
+	return false;
 }
