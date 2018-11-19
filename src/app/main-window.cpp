@@ -2,11 +2,11 @@
 #include "main-window.hpp"
 
 MainWindow::MainWindow(int witdh, int height):
+probablyInFullScreen(false),
 m_button("Hello World"),
 m_box(Gtk::ORIENTATION_VERTICAL),
 m_label1("First Label"),
-m_label2("Second Label"),
-probablyInFullScreen(false) {
+m_label2("Second Label") {
 	// Configure this window:
 	this->set_default_size(witdh, height);
 
