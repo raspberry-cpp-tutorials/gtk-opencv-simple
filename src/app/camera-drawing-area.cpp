@@ -46,6 +46,7 @@ bool CameraDrawingArea::everyNowAndThen() {
 		Gdk::Rectangle r(0, 0, width, height);
 		win->invalidate_rect(r, false);
 	}
+	
 	// Don't stop calling me:
 	return true;
 }
@@ -82,6 +83,6 @@ bool CameraDrawingArea::on_draw(const Cairo::RefPtr<Cairo::Context>& cr) {
 	Gdk::Cairo::set_source_pixbuf(cr, pixbuf);
 	cr->paint();
 	
-	// Call me next time.
+	// Don't stop calling me.
 	return true;
 }
