@@ -29,7 +29,7 @@ find_package( OpenCV REQUIRED )
 
 # Compile files:
 add_executable(rascapp
-    cpp/main.cpp	
+    cpp/main.cpp
     cpp/main-window.cpp
 	cpp/camera-drawing-area.cpp
 )
@@ -39,15 +39,29 @@ target_include_directories(rascapp PRIVATE hpp)
 
 # Link files:
 target_link_libraries(rascapp
-   ${GTKMM_LIBRARIES}
-   ${OpenCV_LIBS}
+	${GTKMM_LIBRARIES}
+	${OpenCV_LIBS}
 )
 
 # Apple requires a bundle to add a Info.plist file that contains the required
 # permissions to access some restricted resources like the camera:
+# https://cmake.org/cmake/help/v3.5/prop_tgt/RESOURCE.html
+# https://cmake.org/cmake/help/v3.5/prop_tgt/MACOSX_BUNDLE_INFO_PLIST.html
+# https://github.com/Kitware/CMake/blob/master/Modules/MacOSXBundleInfo.plist.in
 if (APPLE)
 	set_target_properties(rascapp PROPERTIES
-	  MACOSX_BUNDLE TRUE
-	  MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/res/Info.plist
+		MACOSX_BUNDLE TRUE
+		MACOSX_FRAMEWORK_IDENTIFIER org.cmake.ExecutableTarget
+		MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/res/MacOSXBundleInfo.plist.in
+		
+		# This property is required:
+		MACOSX_BUNDLE_GUI_IDENTIFIER "rascapp-${PROJECT_VERSION}"                          # Needed
+		
+		# Those properties are not required:
+		MACOSX_BUNDLE_INFO_STRING "rascapp ${PROJECT_VERSION}, by jmgonet@agl-developpement.ch"
+		MACOSX_BUNDLE_LONG_VERSION_STRING ${PROJECT_VERSION}
+		MACOSX_BUNDLE_BUNDLE_NAME "rascapp"
+		MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION}
+		MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
 	)
 endif()

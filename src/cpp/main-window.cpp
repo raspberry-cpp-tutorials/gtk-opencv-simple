@@ -1,4 +1,5 @@
 #include <iostream>
+#include <syslog.h>
 #include "main-window.hpp"
 
 MainWindow::MainWindow(int witdh, int height):
@@ -36,7 +37,7 @@ m_label1("First Label") {
 }
 
 void MainWindow::buttonClick() {
-    std::cout << "Hello World" << std::endl;
+	syslog (LOG_NOTICE, "Hello world!");
 }
 
 bool MainWindow::on_key_press_event(GdkEventKey* event) {
@@ -48,7 +49,7 @@ bool MainWindow::on_key_press_event(GdkEventKey* event) {
 				get_application()->quit();
 			}
 			return true;
-			
+
 			// [F] toggles fullscreen mode:
 		case GDK_KEY_F:
 		case GDK_KEY_f:
