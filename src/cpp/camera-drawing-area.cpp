@@ -7,6 +7,7 @@
 //
 
 #include <stdio.h>
+#include <iostream>
 #include "opencv2/imgproc.hpp"
 #include "opencv2/core.hpp"
 #include "opencv2/highgui.hpp"
@@ -15,7 +16,8 @@
 
 CameraDrawingArea::CameraDrawingArea():
 videoCapture(0) {
-
+	std::cout << "01" << std::endl;
+	
 	// Lets refresh drawing area very now and then.
 	timeoutConnection = Glib::signal_timeout().connect(sigc::mem_fun(*this, &CameraDrawingArea::everyNowAndThen), 100);
 }

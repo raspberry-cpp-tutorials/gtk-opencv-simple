@@ -4,5 +4,9 @@
 <dict>
 	<key>NSCameraUsageDescription</key>
 	<string>This app requires to access your camera to retrieve images and perform the demo</string>
+	<key>NSSupportsSuddenTermination</key>
+	<true/>
+	<key>CFBundleName</key>
+	<string>rascapp</string>
 </dict>
 </plist>
