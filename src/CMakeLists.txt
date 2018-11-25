@@ -45,9 +45,6 @@ target_link_libraries(rascapp
 
 # Apple requires a bundle to add a Info.plist file that contains the required
 # permissions to access some restricted resources like the camera:
-# https://cmake.org/cmake/help/v3.5/prop_tgt/RESOURCE.html
-# https://cmake.org/cmake/help/v3.5/prop_tgt/MACOSX_BUNDLE_INFO_PLIST.html
-# https://github.com/Kitware/CMake/blob/master/Modules/MacOSXBundleInfo.plist.in
 if (APPLE)
 	set_target_properties(rascapp PROPERTIES
 		MACOSX_BUNDLE TRUE
