@@ -16,23 +16,27 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # Must use GNUInstallDirs to install libraries into correct locations on all platforms:
 include(GNUInstallDirs)
 
-# Pkg_config is used to locate header and files for dependency libraries:
+# Pkg_config is used to locate headers and files for dependency libraries:
 find_package(PkgConfig)
 
 # Defines variables GTKMM_INCLUDE_DIRS, GTKMM_LIBRARY_DIRS and GTKMM_LIBRARIES.
-pkg_check_modules(GTKMM gtkmm-3.0) 
+pkg_check_modules(GTKMM gtkmm-3.0)
+
+# Adds GTKMM_INCLUDE_DIRS, GTKMM_LIBRARY_DIRS to the list of folders the
+# compiler and linker will use to look for dependencies:
 link_directories( ${GTKMM_LIBRARY_DIRS} )
 include_directories( ${GTKMM_INCLUDE_DIRS} )
 
-# Compile files:
+# Declares a new executable target called rascapp
+# and lists the files to compile for it:
 add_executable(rascapp
     cpp/main.cpp	
 	
     cpp/main-window.cpp
-	hpp/main-window.hpp
+    hpp/main-window.hpp
 )
 
-# Add folder with all headers:
+# Adds the folder with all headers:
 target_include_directories(rascapp PRIVATE hpp)
 
 # Link files:
