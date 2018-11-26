@@ -3,14 +3,14 @@
 
 #include "main-window.hpp"
 
-MainWindow::MainWindow(int witdh, int height):
+MainWindow::MainWindow(int width, int height):
 probablyInFullScreen(false),
 m_button("Hello World"),
 m_box(Gtk::ORIENTATION_VERTICAL),
 m_label1("First Label"),
 m_label2("Second Label") {
 	// Configure this window:
-	this->set_default_size(witdh, height);
+	this->set_default_size(width, height);
 
 	// Connect the 'click' signal and make the button visible:
 	m_button.signal_clicked().connect(
