@@ -1,4 +1,6 @@
-#include <iostream>
+#include <syslog.h>
+#include <unistd.h>
+
 #include "main-window.hpp"
 
 MainWindow::MainWindow(int witdh, int height):
@@ -12,8 +14,8 @@ m_label2("Second Label") {
 
 	// Connect the 'click' signal and make the button visible:
 	m_button.signal_clicked().connect(
-		sigc::mem_fun(*this, &MainWindow::buttonClick));
-    m_button.show();
+	    sigc::mem_fun(*this, &MainWindow::buttonClick));
+	m_button.show();
 	
 	// Make the first label visible:
 	m_label1.show();
@@ -37,12 +39,12 @@ m_label2("Second Label") {
 }
 
 void MainWindow::buttonClick() {
-    std::cout << "Hello World" << std::endl;
+	syslog(LOG_NOTICE, "User %d says 'Hello World'", getuid());
 }
 
 bool MainWindow::on_key_press_event(GdkEventKey* event) {
 	switch (event->keyval) {
-			// Ctrl + C: Ends the app:
+		// Ctrl + C: Ends the app:
 		case GDK_KEY_C:
 		case GDK_KEY_c:
 			if ((event->state & GDK_CONTROL_MASK) == GDK_CONTROL_MASK) {
@@ -50,7 +52,7 @@ bool MainWindow::on_key_press_event(GdkEventKey* event) {
 			}
 			return true;
 			
-			// [F] toggles fullscreen mode:
+		// [F] toggles fullscreen mode:
 		case GDK_KEY_F:
 		case GDK_KEY_f:
 			if (probablyInFullScreen) {
@@ -62,7 +64,7 @@ bool MainWindow::on_key_press_event(GdkEventKey* event) {
 			}
 			return true;
 			
-			// [esc] exits fullscreen mode:
+		// [esc] exits fullscreen mode:
 		case GDK_KEY_Escape:
 			unfullscreen();
 			probablyInFullScreen = false;
