@@ -27,7 +27,9 @@ include_directories( ${GTKMM_INCLUDE_DIRS} )
 # Compile files:
 add_executable(rascapp
     cpp/main.cpp	
+	
     cpp/main-window.cpp
+	hpp/main-window.hpp
 )
 
 # Add folder with all headers:
