@@ -1,11 +1,3 @@
-//
-//  viseur.cpp
-//  opencv-hello-world
-//
-//  Created by Jean-Michel Gonet on 19/02/18.
-//  Copyright © 2018 Jean-Michel Gonet. All rights reserved.
-//
-
 #include <stdio.h>
 #include <iostream>
 #include "opencv2/imgproc.hpp"

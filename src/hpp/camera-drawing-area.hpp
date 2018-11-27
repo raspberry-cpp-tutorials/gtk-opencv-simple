@@ -1,11 +1,8 @@
-
 #ifndef CAMERA_DRAWING_AREA_H
 #define CAMERA_DRAWING_AREA_H
 
 #include <opencv2/highgui.hpp>
 #include <gtkmm.h>
-#include <thread>
-#include <mutex>
 
 class CameraDrawingArea :
 public Gtk::DrawingArea {
@@ -16,7 +13,6 @@ public:
 protected:
     bool on_draw(const Cairo::RefPtr<Cairo::Context>& cr) override;
 	void on_size_allocate (Gtk::Allocation& allocation) override;
-	void on_capture();
 	
 	bool everyNowAndThen();
 

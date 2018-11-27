@@ -52,7 +52,7 @@ if (APPLE)
 		MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/res/MacOSXBundleInfo.plist.in
 		
 		# This property is required:
-		MACOSX_BUNDLE_GUI_IDENTIFIER "rascapp-${PROJECT_VERSION}"                          # Needed
+		MACOSX_BUNDLE_GUI_IDENTIFIER "rascapp-${PROJECT_VERSION}"
 		
 		# Those properties are not required:
 		MACOSX_BUNDLE_INFO_STRING "rascapp ${PROJECT_VERSION}, by jmgonet@agl-developpement.ch"
