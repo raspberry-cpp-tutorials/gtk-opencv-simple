@@ -11,7 +11,7 @@ public:
 	virtual ~MainWindow() = default;
 
 protected:
-	bool on_key_press_event(GdkEventKey* event);
+	bool on_key_press_event(GdkEventKey* event) override;
     
 private:
 	void buttonClick();
