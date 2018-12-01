@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <iostream>
 #include "opencv2/imgproc.hpp"
 #include "opencv2/core.hpp"
 #include "opencv2/highgui.hpp"
@@ -9,23 +7,11 @@
 CameraDrawingArea::CameraDrawingArea():
 videoCapture(0) {
 	// Lets refresh drawing area very now and then.
-	timeoutConnection = Glib::signal_timeout().connect(sigc::mem_fun(*this, &CameraDrawingArea::everyNowAndThen), 100);
+	everyNowAndThenConnection = Glib::signal_timeout().connect(sigc::mem_fun(*this, &CameraDrawingArea::everyNowAndThen), 100);
 }
 
 CameraDrawingArea::~CameraDrawingArea() {
-	timeoutConnection.disconnect();
-}
-
-/**
- * Called every time the widget has its allocation changed.
- */
-void CameraDrawingArea::on_size_allocate (Gtk::Allocation& allocation) {
-	// Call the parent to do whatever needs to be done:
-	DrawingArea::on_size_allocate(allocation);
-	
-	// Remember the new allocated size for future operations.
-	width = allocation.get_width();
-	height = allocation.get_height();
+	everyNowAndThenConnection.disconnect();
 }
 
 /**
@@ -41,6 +27,18 @@ bool CameraDrawingArea::everyNowAndThen() {
 	
 	// Don't stop calling me:
 	return true;
+}
+
+/**
+ * Called every time the widget has its allocation changed.
+ */
+void CameraDrawingArea::on_size_allocate (Gtk::Allocation& allocation) {
+	// Call the parent to do whatever needs to be done:
+	DrawingArea::on_size_allocate(allocation);
+	
+	// Remember the new allocated size for resizing operation:
+	width = allocation.get_width();
+	height = allocation.get_height();
 }
 
 /**

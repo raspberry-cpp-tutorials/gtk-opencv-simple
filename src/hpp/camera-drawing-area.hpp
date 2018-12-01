@@ -17,7 +17,7 @@ protected:
 	bool everyNowAndThen();
 
 private:
-	sigc::connection timeoutConnection;
+	sigc::connection everyNowAndThenConnection;
 	cv::VideoCapture videoCapture;
 	cv::Mat webcam;
 	cv::Mat output;
