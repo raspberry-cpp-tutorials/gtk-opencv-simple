@@ -1,5 +1,5 @@
-#include <iostream>
 #include "main-window.hpp"
+#include <syslog.h>
 
 MainWindow::MainWindow(int width, int height):
 probablyInFullScreen(false),
@@ -37,7 +37,7 @@ m_label2("Second Label") {
 }
 
 void MainWindow::buttonClick() {
-	std::cout << "Hello world" << std::endl;
+	syslog(LOG_NOTICE, "Hello world!");
 }
 
 bool MainWindow::on_key_press_event(GdkEventKey* event) {
