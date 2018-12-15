@@ -1,7 +1,5 @@
-#include <syslog.h>
-#include <unistd.h>
-
 #include "main-window.hpp"
+#include <syslog.h>
 
 MainWindow::MainWindow(int width, int height):
 probablyInFullScreen(false),
@@ -38,7 +36,7 @@ m_label1("First Label") {
 }
 
 void MainWindow::buttonClick() {
-	syslog(LOG_NOTICE, "User %d says 'Hello World'", getuid());
+	syslog(LOG_NOTICE, "Hello world!");
 }
 
 bool MainWindow::on_key_press_event(GdkEventKey* event) {
