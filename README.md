@@ -13,9 +13,10 @@ I'm using the following technical stack:
 
 # The branches structure
 In the [Wiki](https://github.com/raspberry-cpp-tutorials/gtk-opencv-simple/wiki) articles I'm explaining the code quite in detail. To help the exposition order, I split the code into multiple steps:
-- Master branch contains step 1.
+- Step1 branch contains the code for step 1.
 - Step2 branch contains step 2.
 - Etc.
+- Master branch contains the final code, all steps together.
 
 # Cross-platform application
 An important element is to be able to build and test your project in your preferred desktop computer or notebook. _Raspberry Pi_ is meant to be an embedded system platform, and it is an amazing one. Still, it lacks the right keyboard, mouse, monitor or amount of memory required to be a comfortable as a development tool.
