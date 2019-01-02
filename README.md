@@ -2,8 +2,6 @@
 
 _C++_, _OpenCV_ and _Gtk_ are a nice triplet to build applications that run on a Raspberry PI, taking images from the camera, process them, display them and have an unlimited user interface. In this example I'm showing a naive path for displaying camera captures into a full screen window. In this other I amend some of the shortcomings of this too-simple method. I hope these two examples can help you through the boring problems you need to solve before reaching the place where you can have fun.
 
-I assume that you know about coding but you are not familiar with _C++_, _Gtk_ or _OpenCV_. It was my case when I started this little project, and I spent a huge amount of time discovering the specifics of this rich language and its dependencies. As this is not a _C++_ tutorial, I will only name the concepts and provide links to the explanations.
-
 I'm using the following technical stack:
 
 * **_Raspberry Pi_** - The ultimate goal is to launch the application on it.
@@ -13,7 +11,7 @@ I'm using the following technical stack:
 * **_OpenCV_** - One very widely used open source (hence the Open) computer vision (hence the CV) library.
 * **_Gtkmm_**, which is the _C++_ oriented port of _Gtk_ - Although _OpenCV_ lets you display images on screen, it is somewhat limited when interacting with the user. Being easily compatible, _Gtk / Gtkmm_ are a great complement to _OpenCV_ for building real user interfaces around computer vision applications.
 
-# About the code
+# The branches structure
 In the [Wiki](https://github.com/raspberry-cpp-tutorials/gtk-opencv-simple/wiki) articles I'm explaining the code quite in detail. To help the exposition order, I split the code into multiple steps:
 - Master branch contains step 1.
 - Step2 branch contains step 2.
