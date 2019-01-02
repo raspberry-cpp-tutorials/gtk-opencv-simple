@@ -14,7 +14,7 @@ I'm using the following technical stack:
 * **_Gtkmm_**, which is the _C++_ oriented port of _Gtk_ - Although _OpenCV_ lets you display images on screen, it is somewhat limited when interacting with the user. Being easily compatible, _Gtk / Gtkmm_ are a great complement to _OpenCV_ for building real user interfaces around computer vision applications.
 
 # About the code
-In the [Wiki](wiki) articles I'm explaining the code quite in detail. To help the exposition order, I split the code into multiple steps:
+In the [Wiki](https://github.com/raspberry-cpp-tutorials/gtk-opencv-simple/wiki) articles I'm explaining the code quite in detail. To help the exposition order, I split the code into multiple steps:
 - Master branch contains step 1.
 - Step2 branch contains step 2.
 - Etc.
@@ -24,19 +24,18 @@ An important element is to be able to build and test your project in your prefer
 
 You find in Wiki the detailed instructions to install a working development environment in the three major operative systems:
 
-* [Installing Mac OS X development environment](wiki/Mac-OS-X-development-environment)
-* [Installing Windows development environment](wiki/Windows-development-environment)
-* [Installing Linux development environment](wiki/Linux-development-environment)
+* [Installing Mac OS X development environment](https://github.com/raspberry-cpp-tutorials/gtk-opencv-simple/wiki/Mac-OS-X-development-environment)
+* [Installing Windows development environment](https://github.com/raspberry-cpp-tutorials/gtk-opencv-simple/wiki/Windows-development-environment)
+* [Installing Linux development environment](https://github.com/raspberry-cpp-tutorials/gtk-opencv-simple/wiki/Linux-development-environment)
 
 
 Last but not least:
 
-* [Installing Mac OS X development environment](wiki/Installing-on-Raspberry-PI)
+* [Installing Mac OS X development environment](https://github.com/raspberry-cpp-tutorials/gtk-opencv-simple/wiki/Installing-on-Raspberry-PI)
 
 # The project's folder structure
 
 There are several great articles that discuss about the best folder structure for a project built with _CMake_:
-
 
  * [https://arne-mertz.de/2018/06/cmake-project-structure/](https://arne-mertz.de/2018/06/cmake-project-structure/): I like this one because it discusses how to integrate those header-only libraries, and uses _Catch_ as an example.
  * [https://rix0r.nl/blog/2015/08/13/cmake-guide/](https://rix0r.nl/blog/2015/08/13/cmake-guide/): I like this one because it shows in detail how to configure CMake and why, and also acknowledges the difference between library (which is easily unit tested) and application (which is the user interface, and not very easy to unit test).
