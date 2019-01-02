@@ -1,6 +1,6 @@
 # A simple Gtk / OpenCV application in C++
 
-_C++_, _OpenCV_ and _Gtk_ are a nice triplet to build applications that run on a Raspberry PI, taking images from the camera, process them, display them and have an unlimited user interface. In this example I'm showing a naive path for displaying camera captures into a full screen window. In this other I amend some of the shortcomings of this too-simple method. I hope these two examples can help you through the boring problems you need to solve before reaching the place where you can have fun.
+_C++_, _OpenCV_ and _Gtk_ are a nice triplet to build applications that run on a Raspberry PI, taking images from the camera, process them, display them and have an unlimited user interface. In this example I'm showing a straight-forward way to display camera captures into a full screen window. In the next example, [gtk-opencv-patterns](https://github.com/raspberry-cpp-tutorials/gtk-opencv-patterns), I amend some of the shortcomings of this too naive method. I hope these two examples can help you through the boring problems you need to solve before reaching the place where you can have fun.
 
 I'm using the following technical stack:
 
