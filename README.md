@@ -31,7 +31,7 @@ You find in Wiki the detailed instructions to install a working development envi
 
 Last but not least:
 
-* [Installing Mac OS X development environment](https://github.com/raspberry-cpp-tutorials/gtk-opencv-simple/wiki/Installing-on-Raspberry-PI)
+* [Installing the project on Raspberry PI](https://github.com/raspberry-cpp-tutorials/gtk-opencv-simple/wiki/Installing-on-Raspberry-PI)
 
 # The project's folder structure
 
