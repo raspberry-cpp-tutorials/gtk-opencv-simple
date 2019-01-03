@@ -39,8 +39,7 @@ There are several great articles that discuss about the best folder structure fo
  * [https://arne-mertz.de/2018/06/cmake-project-structure/](https://arne-mertz.de/2018/06/cmake-project-structure/): I like this one because it discusses how to integrate those header-only libraries, and uses _Catch_ as an example.
  * [https://rix0r.nl/blog/2015/08/13/cmake-guide/](https://rix0r.nl/blog/2015/08/13/cmake-guide/): I like this one because it shows in detail how to configure CMake and why, and also acknowledges the difference between library (which is easily unit tested) and application (which is the user interface, and not very easy to unit test).
 
-
-In this first stage (there is more on the second part of the article), I'm proposing a simplified folder structure. Projects having multiple executables and libraries need one folder per module, and the structure is much more complex. In this case, as there will be one single executable, I'm just having one root folder, called ``src`` and, in it, one folder for each type of file - sources, headers and resources.
+Projects having multiple executables and libraries need one folder per module, and each module should have multiple folders according to the type of file or resource. In the case of a simple application written in one single module, producing one single executable, I'm just having one root folder, called ``src`` and, in it, one folder for each type of file - sources, headers and resources:
 
 ```
 .gitignore        <-- Ignore xcode, codeb, build folders.
