@@ -13,6 +13,9 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# Creates the compile_commands.json used by editors for code completion
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # Must use GNUInstallDirs to install libraries into correct locations on all platforms:
 include(GNUInstallDirs)
 
